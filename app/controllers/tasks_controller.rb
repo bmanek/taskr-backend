@@ -11,4 +11,9 @@ class TasksController < ApplicationController
     byebug
   end
 
+  private
+  def task_params
+    params.require(:task).permit(:description, :due, :priority, :list_id)
+  end
+
 end
